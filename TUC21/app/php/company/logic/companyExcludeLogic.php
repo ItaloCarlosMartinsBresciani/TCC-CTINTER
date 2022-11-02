@@ -1,0 +1,68 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['isAuth'])){
+    header("Location: ../../../../index.php ");
+    exit();
+}
+
+require_once('../../functions.php');
+require_once('../../../db/connect.php');
+
+if (isset($_GET['type']) && isset($_GET['id'])) {
+    $type = cleanString($_GET['type']);
+
+    try {
+      $id = cleanString($_GET['id']);
+
+      $idDec = decodeId($id);
+    }
+    catch (Exception $e) {
+      header('Location: ../../../../views/company/companyPage.php');
+    }   
+} else {
+    header('Location: ../../../../views/company/companyPage.php');
+}
+
+if ($type == 'person') {
+    try {
+        $query = 'UPDATE person SET valid = FALSE, deleted = TRUE, deleted_date = NOW() WHERE id_person = :id';
+
+        $stmt = $conn->prepare($query);
+        
+        $stmt->bindValue(':id', $idDec);
+        
+        $stmt->execute();
+
+        $_SESSION['feedback'] = 'successExclude';
+        $_SESSION['btn'] = 1;
+        header('Location: ../../../../views/company/companyPage.php');
+    } catch (Exception $e) {
+        $_SESSION['feedback'] = 'errorExclude';
+        $_SESSION['btn'] = 1;
+        header('Location: ../../../../views/company/companyPage.php');
+        //echo $e->getMessage();
+    }
+ } 
+ else if ($type == 'employee') {
+    try {
+        $query = 'UPDATE person SET valid = FALSE, deleted = TRUE, deleted_date = NOW() WHERE id_person = :id';
+
+        $stmt = $conn->prepare($query);
+        
+        $stmt->bindValue(':id', $idDec);
+        
+        $stmt->execute();
+
+        $_SESSION['feedback'] = 'successExclude';
+        $_SESSION['btn'] = 1;
+        header('Location: ../../../../views/company/companyPage.php');
+
+    } catch (Exception $e) {
+        $_SESSION['feedback'] = 'errorExclude';
+        $_SESSION['btn'] = 1;
+        header('Location: ../../../../views/company/companyPage.php');
+        //echo $e->getMessage();
+    }
+ } 

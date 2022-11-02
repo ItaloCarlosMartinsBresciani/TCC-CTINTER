@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    min-height: 100vh;
+
+    background: rgb(240, 240, 240);
+}
+
+// https://developers.google.com/identity/branding-guidelines
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+    background:  #4285F4;
+    font-size: 18px;
+    border: 1px solid transparent;
+    padding: 20px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+
+    i {
+        font-size: 22px;
+        margin-right: 5px;
+    }
+}

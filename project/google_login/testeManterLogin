@@ -1,0 +1,39 @@
+<?php
+
+    navigator.credentials.get({
+    password: true,
+    unmediated: true, 
+    federated: {
+      providers: [
+        'https://account.google.com',
+      ]
+    }
+  })
+  //       ^isso aqui, em tese, é para manter o usuário logado se ele fechar o site
+
+
+    /*
+    <form id="signup" method="post">
+    <input name="email" type="text" autocomplete="username email">
+    <input name="display-name" type="text" autocomplete="name">
+    <input name="password" type="password" autocomplete="new-password">
+    <input type="submit" value="Sign Up!">
+    </form>
+         
+         ^isso aqui é um autocomplete pras informações
+          se o usuário já tiver logado
+    */
+    
+    if (window.PasswordCredential) {
+        var c = new PasswordCredential(e.target);
+        return navigator.credentials.store(c);
+      } else {
+        return Promise.resolve(profile);
+      }
+
+      // ^ isso aqui é usado pra guardar o login da pessoa, tipo quando o google
+      //   pergunta se vc quer salvar a senha de um site 
+
+      navigator.credentials.requireUserMediation();
+      // isso aqui é para caso o usuário tenha feito o logout,
+      // o google não fazer login automaticamente quando ele voltar

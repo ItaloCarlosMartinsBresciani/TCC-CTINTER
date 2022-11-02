@@ -1,0 +1,26 @@
+** Adicionar **
+
+quem editou
+proprietario (Quem pode ser o proprietário? Quem edita?)
+data da ultima edição
+
+Bloquear edição
+
+** Proprietario **
+
+// Quem adiciona o arquivo 
+
+- Convenio: Unidade Docente
+- Proposta plano estágio: Estagiário
+- Relatoria Acompanhamento: // Estagiário ou supervisor
+- Rescisão de Contrato: Empresa
+- Prorrogação estagio: Empresa
+- Termo Obrigatório: Empresa
+- Termo não Obrigatório: Empresa
+- Mudança de Modalidade: Estagiário
+- Solicitação Covalidação: Estagiário
+- Solicitação Experiência: Estagiário
+- Desligamento Estágio: Estagiário
+- Horas Realizadas: Empresa
+- Relatório Final: Supervisor
+- Relatório Nota: Supervisor

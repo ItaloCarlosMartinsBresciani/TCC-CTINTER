@@ -1,0 +1,9 @@
+CREATE DATABASE google_login; 
+
+CREATE TABLE google_user (
+    id SERIAL NOT NULL PRIMARY KEY, 
+    sub VARCHAR(25) NOT NULL,
+    name VARCHAR(60) NOT NULL, 
+    email VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+);
