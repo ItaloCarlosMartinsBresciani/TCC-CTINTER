@@ -84,7 +84,7 @@ Note que a validação ocorre segundo o `ID` do usuário, que deve ser validado 
 
 Utilizem o Git e GitHub para a organização. É importante que reuniões sejam realizadas e cada pessoa se organize segundo o projeto. A tabela do projeto pode ser manipula e utilizada para que cada pessoa possa assumir tarefas e realizar anotações dos problemas encontrados. 
 
-![image](https://user-images.githubusercontent.com/69210720/130323951-b98cd0a7-4fee-4282-98f0-757ed33917eb.png)
+
 
 ## Aplicativos
 
